@@ -1,6 +1,9 @@
 {
   "name": "web-dev",
   "version": "1.0.0",
+  "engines" : {
+    "node" : "7.10.0"
+  }
   "description": "Web Dev at Northeastern University",
   "main": "server.js",
   "dependencies": {
