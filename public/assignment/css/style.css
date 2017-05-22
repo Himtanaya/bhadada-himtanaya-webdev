@@ -1,7 +1,101 @@
-input.form-control {
+input.form-control,
+textarea.form-control,
+select.form-control {
     margin-bottom: 5px;
 }
 
+nav.navbar.navbar-default.navbar-fixed-top {
+    padding-right: 15px;
+}
+
+.scroll{
+    border-style: solid;
+    border-width: 0px;
+    border-right-width: 1px;
+    border-color: lightgray;
+    overflow-y: visible;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+    left: 0px;
+    margin-top: 50px;
+    padding-top: 15px;
+    margin-bottom: 50px;
+}
+
 body {
-    padding-top: 36px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.navbar-default {
+    background-color: darkblue;
+    border-color: darkblue;
+    float: right;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-header {
+    width: 100%;
+
+}
+
+.navbar-default .navbar-link {
+    color: white;
+}
+
+.navbar.navbar-default a {
+    color: #ffffff;
+}
+
+.wd-widget {
+    margin-bottom: 10px;
+}
+
+.wd-widget > img {
+    width: 100%;
+}
+
+.wd-widget > .wd-widget-toolbar {
+    position: absolute;
+    right: 15px;
+    background: white;
+    opacity: 0.9;
+    padding-right: 10px;
+    padding: 7px;
+    border-bottom-left-radius: 10px;
+    z-index: 3;
+}
+
+.video-container{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.glyphicon{
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.footer-margin{
+    margin-right: 14px;
+}
+
+.header-margin{
+    margin-right: 0px;
 }
