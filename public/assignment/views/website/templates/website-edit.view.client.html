@@ -1,0 +1,104 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 hidden-xs">
+                <div class="navbar-header">
+                    <div class="navbar-text pull-left">
+                        <a href="#!/user/{{model.userId}}/website" class="navbar-link">
+                            <span class="glyphicon glyphicon-menu-left">
+                            </span>
+                        </a>
+                    </div>
+                    <a class="navbar-brand" href="#!/user/{{model.userId}}/website">
+                        Websites
+                    </a>
+                    <div class="navbar-text pull-right">
+                        <a href="#!/user/{{model.userId}}/website/new" class="navbar-link">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 pull-right">
+                <div class="navbar-header">
+                    <div class="navbar-text pull-left hidden-sm hidden-md hidden-lg">
+                        <a href="#!/user/{{model.userId}}/website">
+                            <span class="glyphicon glyphicon-menu-left"></span>
+                        </a>
+                    </div>
+                    <a class="navbar-brand">Edit Website</a>
+                    <div class="navbar-text pull-right navbar-right header-margin">
+                        <a ng-click="model.updateWebsite(model.website)">
+                            <span class="glyphicon glyphicon-ok">
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 hidden-xs scroll">
+                <ul class="list-group">
+                    <li class="list-group-item active">
+                        Name
+                        <p class="pull-right">
+                            Edit
+                        </p>
+                    </li>
+                    <li ng-repeat="website in model.websites" class="list-group-item">
+                        <a href="#!/user/{{model.userId}}/website/{{website._id}}/page">
+                            {{website.name}}
+                        </a>
+                        <a href="#!/user/{{model.userId}}/website/{{website._id}}">
+                            <span class="glyphicon glyphicon-cog pull-right"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-8 pull-right">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Website Name</label>
+                        <input ng-model="model.website.name"
+                               class="form-control"
+                               placeholder="facebook"
+                               value="Blogger"
+                               id="name"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Website Description</label>
+                        <textarea ng-model="model.website.description"
+                                  id="description"
+                                  rows="5"
+                                  placeholder="So big it is its own country"
+                                  class="form-control">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </textarea>
+                    </div>
+                </form>
+
+                <a ng-click="model.updateWebsite(model.website)"
+                   class="btn btn-block btn-success">
+                    Update
+                </a>
+                <a ng-click="model.deleteWebsite(model.websiteId)" class="btn btn-block btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 pull-right">
+                <div class="navbar-text pull-right footer-margin">
+                    <a href="#!/user/{{model.userId}}">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,31 @@
+<div class="container-fluid" ng-controller="widgetEditController">
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input ng-model="model.widget.name"
+                   class="form-control"
+                   placeholder="facebook"
+                   value="top heading"
+                   id="name"/>
+        </div>
+        <div class="form-group">
+            <label for="text">Text</label>
+            <input ng-model="model.widget.text"
+                   class="form-control"
+                   placeholder="facebook"
+                   value="US Senate Reaches Compromise"
+                   id="text"/>
+        </div>
+        <div class="form-group">
+            <label for="size">Size</label>
+            <input ng-model="model.widget.size"
+                   id="size"
+                   value="3"
+                   type="number"
+                   class="form-control"
+                   placeholder="3"/>
+        </div>
+    </form>
+    <a ng-click="model.deleteWidget()" class="btn btn-danger btn-block">Delete</a>
+
+</div>

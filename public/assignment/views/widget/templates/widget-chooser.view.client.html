@@ -1,0 +1,118 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <p class="navbar-text pull-left">
+            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget"
+               class="navbar-link">
+                    <span class="glyphicon glyphicon-menu-left">
+                    </span>
+            </a>
+        </p>
+        <a class="navbar-brand"
+           href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
+            Choose Widget
+        </a>
+    </div>
+</nav>
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-10">
+                    <a ng-click="model.addWidget('HEADING')">
+                        Header
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-10">
+                    <a href="widget-label-edit.html">
+                        Label
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-10">
+                    <a href="widget-html-edit.html">
+                        HTML
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-10">
+                    <a href="widget-text-edit.html">
+                        Text Input
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-10">
+                    <a href="widget-link-edit.html">
+                        Link
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-10">
+                    <a href="widget-button-edit.html">
+                        Button
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-10">
+                    <a ng-click="model.addWidget('IMAGE')">
+                        Image
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-10">
+                    <a ng-click="model.addWidget('YOUTUBE')">
+                        Youtube
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-10">
+                    <a href="widget-table-edit.html">
+                        Data Table
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-10">
+                    <a href="widget-repeater-edit.html">
+                        Repeater
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right footer-margin">
+            <a href="#!/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user navbar-glyphicon"></span>
+            </a>
+        </div>
+    </div>
+</nav>
