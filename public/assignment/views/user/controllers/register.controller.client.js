@@ -20,18 +20,37 @@
                 return;
             }
 
-            var found = userService.findUserByUsername(username);
+            userService
+                .findUserByUsername(username)
+                .then(
+                    function () {
+                        model.error = "sorry, that username is taken";
+                    },
+                    function () {
+                        var newUser = {
+                            username: username,
+                            password: password
+                        };
+                        return userService
+                            .createUser(newUser);
+                    }
+                )
+                .then(function (user) {
+                    $location.url('/user/' + user._id);
+                });
 
-            if(found !== null) {
-                model.error = "sorry, that username is taken";
-            } else {
-                var newUser = {
-                    username: username,
-                    password: password
-                };
-                newUser = userService.createUser(newUser);
-                $location.url('/user/' + newUser._id);
-            }
+            // var found = userService.findUserByUsername(username);
+            //
+            // if(found !== null) {
+            //     model.error = "sorry, that username is taken";
+            // } else {
+            //     var newUser = {
+            //         username: username,
+            //         password: password
+            //     };
+            //     newUser = userService.createUser(newUser);
+            //     $location.url('/user/' + newUser._id);
+            // }
         }
     }
 })();

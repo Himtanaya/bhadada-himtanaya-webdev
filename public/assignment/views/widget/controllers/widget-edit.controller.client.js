@@ -11,16 +11,29 @@
         model.websiteId = $routeParams['websiteId'];
         model.pageId = $routeParams['pageId'];
         model.widgetId = $routeParams['widgetId'];
-
-        function init() {
-            model.widgets = widgetService.findWidgetsByPageId(model.pageId);
-            model.widget = widgetService.findWidgetById(model.widgetId);
-        }
-        init();
-
         //event handlers
         model.deleteWidget = deleteWidget;
         model.updateWidget = updateWidget;
+
+        function init() {
+            widgetService
+                .findWidgetsByPageId(model.pageId)
+                .then(renderWidgets);
+
+            widgetService
+                .findWidgetById(model.widgetId)
+                .then(renderWidget);
+        }
+        init();
+
+        function renderWidgets(widgets) {
+            model.widgets = widgets;
+        }
+
+        function renderWidget(widget) {
+            model.widget = widget;
+        }
+
 
         function doYouTrustUrl(url) {
             var baseUrl = "https://www.youtube.com/embed/";
@@ -31,13 +44,23 @@
         }
 
         function deleteWidget() {
-            widgetService.deleteWidget(model.widgetId);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+            widgetService
+                .deleteWidget(model.widgetId)
+                .then(function(response)
+                {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                });
+
         }
 
         function updateWidget(){
-            widgetService.updateWidget(model.widgetId, model.widget);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+            widgetService
+                .updateWidget(model.widgetId, model.widget)
+                .then(function(response)
+                {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                });
+
         }
     }
 })();

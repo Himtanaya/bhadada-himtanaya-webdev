@@ -14,9 +14,15 @@
         model.widgetUrl = widgetUrl;
 
         function init(){
-            model.widgets = widgetService.findWidgetsByPageId(model.pageId);
+            widgetService
+                .findWidgetsByPageId(model.pageId)
+                .then(renderWidgets);
         }
         init();
+
+        function renderWidgets(widgets) {
+            model.widgets = widgets;
+        }
 
         function widgetUrl(widget) {
             var url = 'views/widget/templates/widget-'+widget.widgetType.toLowerCase()+'.view.client.html';

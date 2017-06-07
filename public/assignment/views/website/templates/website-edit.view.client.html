@@ -29,7 +29,7 @@
                     </div>
                     <a class="navbar-brand">Edit Website</a>
                     <div class="navbar-text pull-right navbar-right header-margin">
-                        <a ng-click="model.updateWebsite(model.website)">
+                        <a ng-click="model.updateWebsite(model.website, model.websiteId)">
                             <span class="glyphicon glyphicon-ok">
                             </span>
                         </a>
@@ -80,7 +80,7 @@
                     </div>
                 </form>
 
-                <a ng-click="model.updateWebsite(model.website)"
+                <a ng-click="model.updateWebsite(model.website, model.websiteId)"
                    class="btn btn-block btn-success">
                     Update
                 </a>
