@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/bhadada-himtanaya-webdev');
+// mongoose.connect('mongodb://localhost/bhadada-himtanaya-webdev');
 // mongoose.Promise = require('q').Promise;
 
 
