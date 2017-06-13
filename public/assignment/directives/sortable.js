@@ -35,7 +35,11 @@
 
         function sort(start, end) {
             console.log([start,end]);
-            widgetService.sortWidgets(start,end);
+            widgetService
+                .sortWidgets(start,end)
+                .then(function (status) {
+                    console.log(status);
+                });
         }
     }
 })();

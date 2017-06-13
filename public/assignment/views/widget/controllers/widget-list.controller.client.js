@@ -11,6 +11,7 @@
         model.pageId = $routeParams['pageId'];
         model.trust = trust;
         model.getYouTubeEmbedUrl = getYouTubeEmbedUrl;
+        model.doYouTrustHTML = doYouTrustHTML;
         model.widgetUrl = widgetUrl;
 
         function init(){
@@ -22,10 +23,11 @@
 
         function renderWidgets(widgets) {
             model.widgets = widgets;
+            // console.log(widgets);
         }
 
         function widgetUrl(widget) {
-            var url = 'views/widget/templates/widget-'+widget.widgetType.toLowerCase()+'.view.client.html';
+            var url = 'views/widget/templates/widget-'+widget.type.toLowerCase()+'.view.client.html';
             return url;
         }
 
@@ -39,6 +41,10 @@
         function trust(html) {
             // scrubbing the html
             return $sce.trustAsHtml(html);
+        }
+
+        function doYouTrustHTML(text) {
+            return $sce.trustAsHtml(text);
         }
     }
 })();

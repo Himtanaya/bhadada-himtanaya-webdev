@@ -15,8 +15,8 @@
         };
         return api;
         
-        function deleteWidget(widgetId) {
-            var url = "/api/widget/" + widgetId;
+        function deleteWidget(widgetId, pageId) {
+            var url = "/api/page/"+pageId+"/widget/" + widgetId;
             return $http.delete(url)
                 .then(function (response) {
                     return response.data;
@@ -42,8 +42,11 @@
         function findWidgetsByPageId(pageId) {
             globalPageId = pageId;
             var url = "/api/page/" + pageId + "/widget";
+            // console.log("service.client.before");
             return $http.get(url)
                 .then(function (response) {
+                    // console.log("service.client: " + response);
+                    // console.log(response);
                     return response.data;
                 });
 
@@ -53,6 +56,7 @@
             var url = "/api/page/" + pageId + "/widget";
             return $http.post(url, widget)
                 .then(function (response) {
+                    console.log("widget service client - create widget");
                     return response.data;
                 });
         }
@@ -60,7 +64,7 @@
         function sortWidgets(start, end) {
             var url = '/api/page/:pageId/widget?initial=index1&final=index2';
             url = url
-                .replace('pageId', globalPageId)
+                .replace(':pageId', globalPageId)
                 .replace('index1', start)
                 .replace('index2', end);
             return $http.put(url);

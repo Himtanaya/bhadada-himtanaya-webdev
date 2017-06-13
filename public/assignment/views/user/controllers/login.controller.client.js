@@ -18,7 +18,7 @@
             //             $location.url('/user/' + found._id);
             //         }
             //         else {
-            //             model.message = "sorry, " + username + " not found. please try again!";
+            //             models.message = "sorry, " + username + " not found. please try again!";
             //         }
             //     });
             userService
@@ -28,10 +28,12 @@
                     if (found !== null) {
                         $location.url('/user/' + found._id);
                     }
-                })
-                .error(
+                }, function (err) {
                     model.message = "sorry, " + username + " not found. please try again!"
-                );
+                });
+                // .error(
+                //     model.message = "sorry, " + username + " not found. please try again!"
+                // );
 
         }
     }

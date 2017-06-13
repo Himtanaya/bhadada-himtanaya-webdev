@@ -42,7 +42,7 @@
             // var found = userService.findUserByUsername(username);
             //
             // if(found !== null) {
-            //     model.error = "sorry, that username is taken";
+            //     models.error = "sorry, that username is taken";
             // } else {
             //     var newUser = {
             //         username: username,

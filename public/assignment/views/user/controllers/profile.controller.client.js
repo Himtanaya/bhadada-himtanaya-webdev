@@ -21,7 +21,7 @@
                 .then(function () {
                     model.message = "User update was successful";
                 });
-            var user = userService.updateUser(model.userId, newUser);
+            var user = userService.updateUser(model.userId, user);
             $location.url('/user/'+model.userId+'/website');
         }
 

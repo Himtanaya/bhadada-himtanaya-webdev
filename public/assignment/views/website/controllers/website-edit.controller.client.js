@@ -14,7 +14,7 @@
         model.updateWebsite = updateWebsite;
 
         function init() {
-            // model.websites = websiteService.findAllWebsitesForUser(model.userId);
+            // models.websites = websiteService.findAllWebsitesForUser(models.userId);
             websiteService
                 .findAllWebsitesForUser(model.userId)
                 .then(renderWebsites);
@@ -39,7 +39,7 @@
                 .then(function (response) {
                     $location.url('/user/'+model.userId+'/website');
             });
-            // $location.url('/user/'+model.userId+'/website');
+            // $location.url('/user/'+models.userId+'/website');
 
         }
 
