@@ -5,10 +5,10 @@
 
     function pageNewController($routeParams,
                                   $location,
-                                  pageService) {
+                                  pageService, currentUser) {
         var model = this;
 
-        model.userId = $routeParams['userId'];
+        model.userId = currentUser._id;
         model.websiteId = $routeParams['websiteId'];
         model.createPage = createPage;
 
@@ -24,10 +24,20 @@
         }
 
         function createPage(page) {
+            if(page === null || page === '' || typeof page === 'undefined' )
+            {
+                model.error = "Please provide page name";
+                return;
+            }
+            if(page.name === null || page.name === '' || typeof page.name === 'undefined')
+            {
+                model.error = "Please provide page name";
+                return;
+            }
             pageService
                 .createPage(model.websiteId, page)
                 .then(function (response) {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+                    $location.url('/website/'+model.websiteId+'/page');
                 });
         }
     }

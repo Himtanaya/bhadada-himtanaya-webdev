@@ -3,10 +3,10 @@
         .module('WAM')
         .controller('widgetListController', widgetListController);
 
-    function widgetListController($sce, $routeParams, widgetService) {
+    function widgetListController($sce, $routeParams, widgetService, currentUser) {
         var model = this;
 
-        model.userId = $routeParams['userId'];
+        model.userId = currentUser._id;
         model.websiteId = $routeParams['websiteId'];
         model.pageId = $routeParams['pageId'];
         model.trust = trust;
@@ -37,10 +37,9 @@
             embedUrl += linkUrlParts[linkUrlParts.length - 1];
             return $sce.trustAsResourceUrl(embedUrl);
         }
-        
-        function trust(html) {
-            // scrubbing the html
-            return $sce.trustAsHtml(html);
+
+        function trust(text) {
+            return $sce.trustAsHtml(text);
         }
 
         function doYouTrustHTML(text) {

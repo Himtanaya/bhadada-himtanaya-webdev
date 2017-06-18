@@ -1,8 +1,8 @@
 // var mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost/bhadada-himtanaya-webdev');
 // mongoose.Promise = require('q').Promise;
-var connectionString = 'mongodb://127.0.0.1:27017/test';
 
+var connectionString = 'mongodb://127.0.0.1:27017/bhadada-himtanaya-webdev';
 
 if(process.env.MLAB_USERNAME) {
     connectionString = process.env.MLAB_USERNAME + ":" +
@@ -13,6 +13,7 @@ if(process.env.MLAB_USERNAME) {
 }
 
 var mongoose = require("mongoose");
+mongoose.Promise = require('q').Promise;
 mongoose.connect(connectionString);
 
 require("./services/user.service.server");

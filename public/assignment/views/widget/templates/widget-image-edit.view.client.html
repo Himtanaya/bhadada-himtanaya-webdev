@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="widgetEditController">
+<div class="container-fluid">
     <form action="/api/upload" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">Name</label>
@@ -53,7 +53,7 @@
             Upload
         </button>
 
-        <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}/flickr"
+        <a href="#!/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}/flickr"
            class="btn btn-success btn-block">Search</a>
         <a ng-click="model.deleteWidget()" class="btn btn-block btn-danger">
             Delete

@@ -1,15 +1,14 @@
-<div ng-controller="widgetEditController">
 <nav class="navbar navbar-fixed-top navbar-default navbar-right">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
-            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget"
+            <a href="#!/website/{{model.websiteId}}/page/{{model.pageId}}/widget"
                class="navbar-link">
                     <span class="glyphicon glyphicon-menu-left">
                     </span>
             </a>
         </p>
         <a class="navbar-brand"
-           href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
+           href="#!/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
             Edit Widgets
         </a>
         <p class="navbar-text pull-right">
@@ -24,6 +23,10 @@
 </nav>
 
 <div class="container-fluid">
+
+    <div ng-show="model.error" class="alert alert-danger">
+        {{model.error}}
+    </div>
 
     <div ng-switch="model.widget.type">
         <div ng-switch-when="HEADING">
@@ -48,10 +51,9 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-text pull-right footer-margin">
-            <a href="#!/user/{{model.userId}}">
+            <a href="#!/profile">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
     </div>
 </nav>
-</div>

@@ -5,10 +5,10 @@
         .module('WAM')
         .controller('FlickrImageSearchController', FlickrImageSearchController);
 
-    function FlickrImageSearchController($routeParams, FlickrService, widgetService, $location) {
+    function FlickrImageSearchController($routeParams, FlickrService, widgetService, $location, currentUser) {
         var model = this;
 
-        model.userId = $routeParams.userId;
+        model.userId = currentUser._id;
         model.websiteId = $routeParams.websiteId;
         model.pageId = $routeParams.pageId;
         model.widgetId = $routeParams.widgetId;
@@ -46,7 +46,7 @@
             widgetService
                 .updateWidget(model.widgetId, model.widget)
                 .then(function (response) {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget/'+model.widgetId);
+                    $location.url('/website/'+model.websiteId+'/page/'+model.pageId+'/widget/'+model.widgetId);
                 }, function (err) {
                     model.error = "Unable to add Image";
                 });
