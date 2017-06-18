@@ -36,11 +36,6 @@
 </nav>
 
 <div class="container-fluid">
-
-    <div ng-show="model.error" class="alert alert-danger">
-        {{model.error}}
-    </div>
-
     <div class="row">
         <div class="col-xs-4 hidden-xs scroll">
             <ul class="list-group">
@@ -59,6 +54,10 @@
             </ul>
         </div>
         <div class="col-xs-12 col-sm-8 pull-right">
+
+            <div ng-show="model.error" class="alert alert-danger">
+                {{model.error}}
+            </div>
 
             <label for="name">Name</label>
             <input class="form-control"
