@@ -78,6 +78,20 @@ console.log("Starting Server...");
 //     });
 //
 // }
+var connectionString = 'mongodb://127.0.0.1:27017/bhadada-himtanaya-webdev';
+
+if(process.env.MLAB_USERNAME) {
+    connectionString = process.env.MLAB_USERNAME + ":" +
+        process.env.MLAB_PASSWORD + "@" +
+        process.env.MLAB_HOST + ':' +
+        process.env.MLAB_PORT + '/' +
+        process.env.MLAB_APP_NAME;
+}
+
+var mongoose = require("mongoose");
+mongoose.Promise = require('q').Promise;
+mongoose.connect(connectionString);
+
 
 console.log('Server running at http://localhost:3000');
 var port = process.env.PORT || 3000;
