@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="musicApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--<script src="../vendor/css/bootstrap/css/bootstrap.min.css"></script>-->
+    <script src="../vendor/angular/angular.min.js"></script>
+    <!--<script src="../vendor/angular/angular-route.min.js"></script>-->
+    <script src="search.controller.client.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet"/>
+
+    <title>Project Home Page</title>
+</head>
+<body>
+<div class="container-fluid"
+     ng-controller="searchController as model">
+    <!--<div class="row">-->
+    <!--<div class="col-xs-4">-->
+    <!--<div>-->
+    <!--<input ng-model="searchTerm"-->
+    <!--type="text"-->
+    <!--id="search"-->
+    <!--class="form-control"-->
+    <!--placeholder="search">-->
+    <!--<button ng-click="model.searchInput(searchTerm)" class="btn btn-success btn-block">Search</button>-->
+    <!--</div>-->
+    <div class="row">
+        <div class="col-md-3 col-xs-1"></div>
+        <div class="col-md-6 col-xs-10">
+            <form>
+                <input ng-model="searchTerm"
+                       type="text"
+                       id="search-box"
+                       name="q"
+                       placeholder="search"
+                >
+                <button id="search-btn" ng-click="model.searchInput(searchTerm)"><i class="fa fa-search fa-fw"></i></button>
+            </form>
+        </div>
+        <div class="col-md-3 col-xs-1"></div>
+    </div>
+    <div>
+        <div ng-repeat="track in model.tracks"
+             ng-if="track.mbid!==''"
+             class="list-group-item"
+             style="float: left; width: 200px; height: 300px; margin-right: 10px; margin-bottom: 10px;">
+            <img class="card-img-top card-img-cus" src="{{model.getImage(track)}}"
+                 alt="{{track.name}}">
+            {{track.name}}
+            {{track.artist}}
+            <button ng-click="model.searchTracksById(track)"
+                    class="btn btn-success btn-block">
+                Details
+            </button>
+        </div>
+        <!--</ul>-->
+        <!--<ul class="list-group">-->
+        <!--<li ng-repeat="track in model.tracks"-->
+        <!--ng-if="track.mbid!==''"-->
+        <!--class="list-group-item">-->
+        <!--<img class="card-img-top card-img-cus" src="{{model.getImage(track)}}"-->
+        <!--alt="{{track.name}}">-->
+        <!--{{track.name}}-->
+        <!--{{track.artist}}-->
+        <!--<button ng-click="model.searchTracksById(track)"-->
+        <!--class="btn btn-success btn-block">-->
+        <!--Details-->
+        <!--</button>-->
+        <!--</li>-->
+        <!--</ul>-->
+    </div>
+</div>
+
+<!--<div class="col-xs-8">-->
+<!--<h2>{{model.track.name}}</h2>-->
+<!--&lt;!&ndash;<img ng-srcmodelsodel.track.}}" width="100px"/>&ndash;&gt;-->
+<!--<img class="card-img-top card-img-cus" src="{{model.track.image}}"-->
+<!--alt="{{track.name}}">-->
+<!--<h3>{{model.track.artist}}</h3>-->
+<!--&lt;!&ndash;<modelsodel.movie.Plot}}</p>&ndash;&gt;-->
+<!--<h3>{{model.track.listeners}}</h3>-->
+
+<!--&lt;!&ndash;<ul>&ndash;&gt;-->
+<!--&lt;!&ndash;<li ng-repeat="actormodelsodel.movie.Actors.split(',')">&ndash;&gt;-->
+<!--&lt;!&ndash;{{actor}}&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+</body>
+</html>

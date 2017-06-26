@@ -3,10 +3,10 @@
         .module('WAM')
         .controller("widgetNewController", widgetNewController);
 
-    function widgetNewController($location, $routeParams, widgetService, currentUser) {
+    function widgetNewController($location, $routeParams, widgetService) {
         var model = this;
 
-        model.userId = currentUser._id;
+        model.userId = $routeParams['userId'];
         model.websiteId = $routeParams['websiteId'];
         model.pageId = $routeParams['pageId'];
 
@@ -26,16 +26,6 @@
         }
 
         function addWidget(widgetType) {
-            // if(widget === null || widget === '' || typeof widget === 'undefined' )
-            // {
-            //     model.error = "Please provide page name";
-            //     return;
-            // }
-            // if(widget.name === null || widget.name === '' || typeof widget.name === 'undefined')
-            // {
-            //     model.error = "Please provide page name";
-            //     return;
-            // }
             var widget = {};
             widget.type = widgetType;
             widget.deletable=true;
@@ -46,7 +36,7 @@
                     console.log("widget new-controller"+widget._id);
                     // console.log(widget.type);
                     // console.log(widget);
-                    $location.url('/website/'+model.websiteId+'/page/'+model.pageId+'/widget/'+widget._id);
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget/'+widget._id);
                 });
         }
     }

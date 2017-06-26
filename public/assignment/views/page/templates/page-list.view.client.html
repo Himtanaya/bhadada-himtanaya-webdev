@@ -2,16 +2,16 @@
 <nav class="navbar navbar-fixed-top navbar-default navbar-right">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
-            <a href="#!/website" class="navbar-link">
+            <a href="#!/user/{{model.userId}}/website" class="navbar-link">
                     <span class="glyphicon glyphicon-menu-left">
                     </span>
             </a>
         </p>
-        <a class="navbar-brand" href="#!/website">
+        <a class="navbar-brand" href="#!/user/{{model.userId}}/website">
             Pages
         </a>
         <p class="navbar-text pull-right">
-            <a href="#!/website/{{model.websiteId}}/page/new" class="navbar-link">
+            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-link">
                     <span class="glyphicon glyphicon-plus">
                     </span>
             </a>
@@ -40,7 +40,7 @@
             class="list-group-item">
             <div class="row">
                 <div class="col-lg-5 col-md-8 col-xs-10">
-                    <a href="#!/website/{{model.websiteId}}/page/{{page._id}}/widget">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
                         {{page.name}}
                     </a>
                 </div>
@@ -51,7 +51,7 @@
                     6/16/2017
                 </div>
                 <div class="col-xs-1 pull-right">
-                    <a href="#!/website/{{model.websiteId}}/page/{{page._id}}">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
                         <span class="glyphicon glyphicon-cog pull-right"></span>
                     </a>
                 </div>
@@ -62,7 +62,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-text pull-right footer-margin">
-            <a href="#!/profile">
+            <a href="#!/user/{{model.userId}}">
                 <span class="glyphicon glyphicon-user navbar-glyphicon"></span>
             </a>
         </div>

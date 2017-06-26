@@ -4,16 +4,16 @@
             <div class="col-sm-4 hidden-xs">
                 <div class="navbar-header">
                     <div class="navbar-text pull-left">
-                        <a href="#!/website" class="navbar-link">
+                        <a href="#!/user/{{model.userId}}/website" class="navbar-link">
                             <span class="glyphicon glyphicon-menu-left">
                             </span>
                         </a>
                     </div>
-                    <a class="navbar-brand" href="#!/website">
+                    <a class="navbar-brand" href="#!/user/{{model.userId}}/website">
                         Websites
                     </a>
                     <div class="navbar-text pull-right">
-                        <a href="#!/website/new" class="navbar-link">
+                        <a href="#!/user/{{model.userId}}/website/new" class="navbar-link">
                             <span class="glyphicon glyphicon-plus"></span>
                         </a>
                     </div>
@@ -23,7 +23,7 @@
             <div class="col-xs-12 col-sm-8 pull-right">
                 <div class="navbar-header">
                     <div class="navbar-text pull-left hidden-sm hidden-md hidden-lg">
-                        <a href="#!/website">
+                        <a href="#!/user/{{model.userId}}/website">
                             <span class="glyphicon glyphicon-menu-left"></span>
                         </a>
                     </div>
@@ -41,7 +41,6 @@
 </nav>
 
     <div class="container-fluid">
-
         <div class="row">
             <div class="col-xs-4 hidden-xs scroll">
                 <ul class="list-group">
@@ -52,19 +51,16 @@
                         </p>
                     </li>
                     <li ng-repeat="website in model.websites" class="list-group-item">
-                        <a href="#!/website/{{website._id}}/page">
+                        <a href="#!/user/{{model.userId}}/website/{{website._id}}/page">
                             {{website.name}}
                         </a>
-                        <a href="#!/website/{{website._id}}">
+                        <a href="#!/user/{{model.userId}}/website/{{website._id}}">
                             <span class="glyphicon glyphicon-cog pull-right"></span>
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-8 pull-right">
-                <div ng-show="model.error" class="alert alert-danger">
-                    {{model.error}}
-                </div>
                 <form>
                     <div class="form-group">
                         <label for="name">Website Name</label>
@@ -98,7 +94,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-8 pull-right">
                 <div class="navbar-text pull-right footer-margin">
-                    <a href="#!/profile">
+                    <a href="#!/user/{{model.userId}}">
                         <span class="glyphicon glyphicon-user"></span>
                     </a>
                 </div>

@@ -3,11 +3,11 @@
         .module('WAM')
         .controller("widgetEditController", widgetEditController);
 
-    function widgetEditController($sce, $routeParams, widgetService, $location, currentUser) {
+    function widgetEditController($sce, $routeParams, widgetService, $location) {
         var model = this;
 
         model.doYouTrustUrl = doYouTrustUrl;
-        model.userId = currentUser._id;
+        model.userId = $routeParams['userId'];
         model.websiteId = $routeParams['websiteId'];
         model.pageId = $routeParams['pageId'];
         model.widgetId = $routeParams['widgetId'];
@@ -48,27 +48,17 @@
                 .deleteWidget(model.widgetId, model.pageId)
                 .then(function(response)
                 {
-                    $location.url('/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
                 });
 
         }
 
         function updateWidget(){
-            if(model.widget === null || model.widget === '' || typeof model.widget === 'undefined' )
-            {
-                model.error = "Please provide widget name";
-                return;
-            }
-            if(model.widget.name === null || model.widget.name === '' || typeof model.widget.name === 'undefined')
-            {
-                model.error = "Please provide widget name";
-                return;
-            }
             widgetService
                 .updateWidget(model.widgetId, model.widget)
                 .then(function(response)
                 {
-                    $location.url('/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
                 });
 
         }

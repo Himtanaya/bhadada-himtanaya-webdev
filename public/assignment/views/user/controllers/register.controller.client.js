@@ -32,13 +32,25 @@
                             password: password
                         };
                         return userService
-                            .register(newUser);
+                            .createUser(newUser);
                     }
                 )
                 .then(function (user) {
-                    $location.url('/profile');
+                    $location.url('/user/' + user._id);
                 });
 
+            // var found = userService.findUserByUsername(username);
+            //
+            // if(found !== null) {
+            //     models.error = "sorry, that username is taken";
+            // } else {
+            //     var newUser = {
+            //         username: username,
+            //         password: password
+            //     };
+            //     newUser = userService.createUser(newUser);
+            //     $location.url('/user/' + newUser._id);
+            // }
         }
     }
 })();

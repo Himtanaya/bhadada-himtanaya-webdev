@@ -1,16 +1,17 @@
+<div ng-controller="widgetListController">
 <nav class="navbar navbar-fixed-top navbar-default navbar-right">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
-            <a href="#!/website/{{model.websiteId}}/page" class="navbar-link">
+            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
                     <span class="glyphicon glyphicon-menu-left">
                     </span>
             </a>
         </p>
-        <a class="navbar-brand" href="#!/website/{{model.websiteId}}/page">
+        <a class="navbar-brand" href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
             Widgets
         </a>
         <p class="navbar-text pull-right">
-            <a href="#!/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new"
+            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new"
                class="navbar-link">
                     <span class="glyphicon glyphicon-plus">
                     </span>
@@ -24,7 +25,7 @@
 
     <div ng-repeat="widget in model.widgets" class="wd-widget">
         <div class="wd-widget-toolbar">
-            <a href="#!/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
+            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
             <span class="glyphicon glyphicon-align-justify"></span>
@@ -36,10 +37,10 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-text pull-right footer-margin">
-            <a href="#!/profile">
+            <a href="#!/user/{{model.userId}}">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
     </div>
 </nav>
-
+</div>

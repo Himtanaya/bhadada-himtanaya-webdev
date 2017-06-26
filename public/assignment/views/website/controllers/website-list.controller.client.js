@@ -3,10 +3,10 @@
         .module('WAM')
         .controller('websiteListController', websiteListController);
     
-    function websiteListController($routeParams, websiteService, currentUser) {
+    function websiteListController($routeParams, websiteService) {
         var model = this;
 
-        model.userId = currentUser._id;
+        model.userId = $routeParams['userId'];
 
         function init() {
             websiteService
