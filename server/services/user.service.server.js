@@ -54,13 +54,12 @@ module.exports = function (app, model) {
     passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
     passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 
+
     app.get('/auth/facebook',passport.authenticate('facebook',{ scope : 'email'}));
     app.get('/auth/facebook/callback',passport.authenticate('facebook', {
-        failureRedirect: '/#/login'
-    }), function(req, res){
-        var url = '/#/home' + req.user._id.toString();
-        res.redirect(url);
-    });
+        successRedirect: '/project/index.html#/profile',
+        failureRedirect: '/project/index.html#/login'
+    }));
 
     function facebookStrategy(token, refreshToken, profile, done) {
         userModel
@@ -92,11 +91,22 @@ module.exports = function (app, model) {
                 });
     }
 
-    app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
-    app.get('/google/callback',
+    // app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+    // app.get('auth/google/callback',
+    //     passport.authenticate('google', {
+    //         successRedirect: '/#/home',
+    //         failureRedirect: '/#/login'
+    //     }));
+
+
+    app.get('/auth/google',
+        passport.authenticate('google', { scope : [ 'https://www.googleapis.com/auth/plus.login',
+            'https://www.googleapis.com/auth/plus.profile.emails.read' ] }));
+    app.get('/auth/google/callback',
         passport.authenticate('google', {
-            successRedirect: '/#/home',
-            failureRedirect: '/#/login'
+            successRedirect: '/project/index.html#/profile',
+            // http://localhost:3000/assignment/index.html#!/profile
+            failureRedirect: '/project/index.html#/login'
         }));
 
 
