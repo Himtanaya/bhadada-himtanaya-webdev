@@ -1,0 +1,107 @@
+<!--<img ng-show="model.tracks.length==0" src="../../images/loading.png"-->
+         <!--class="img-fluid col-centered my-4">-->
+<!--<br><br>-->
+<!--<h3 style="color: white;">Most Popular Songs</h3>-->
+<!--<div class="card-columns my-4" ng-show="model.tracks.length!=0">-->
+    <!--&lt;!&ndash;{{model.searchTerm}}&ndash;&gt;-->
+    <!--<div class="card black" ng-repeat="track in model.tracks" ng-if="track.mbid!=''">-->
+        <!--<a href="#/track/{{track.mbid}}">-->
+            <!--<img class="card-img-top card-img-cus" src="{{model.getImage(track)}}"-->
+             <!--alt="{{track.name}}">-->
+        <!--</a>-->
+        <!--<div class="card-block">-->
+            <!--<h5 class="card-title gray-text">{{track.name}}</h5>-->
+            <!--<p class="card-text">-->
+                <!--<a ng-click="model.viewArtist(track)"-->
+                   <!--class="text-primary"-->
+                   <!--role="button">-->
+                    <!--{{track.artist.name}} </a></p>-->
+            <!--&lt;!&ndash;<p class="card-text"><a href="{{track.artist.url}}" target="_blank"> {{track.artist.name}} </a></p>&ndash;&gt;-->
+            <!--<a ng-show="{{track.streamable.fulltrack}}" href="{{track.streamable['#text']}}" class="btn btn-primary">Play</a>-->
+            <!--&lt;!&ndash;<a ng-hide="{{track.streamable.fulltrack}}" href="{{track.url}}" target="_blank" class="btn btn-primary">Get</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="#/track/{{track.mbid}}" class="btn btn-primary mb-2 float-right">View</a>&ndash;&gt;-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+
+
+<!--<img ng-show="model.tracks.length==0" src="../../images/loading.png"-->
+     <!--class="img-fluid col-centered my-4">-->
+<!--<br><br>-->
+
+<!--<div ng-show="model.tracks.length!=0">-->
+    <!--<h3 style="color: white;">Most Popular Songs</h3>-->
+    <!--&lt;!&ndash;{{model.searchTerm}}&ndash;&gt;-->
+    <!--<div ng-repeat="track in model.tracks" ng-if="track.mbid!=''"-->
+         <!--style="float: left; width: 250px; height: 300px; margin-right: 10px; margin-bottom: 20px; border: thick solid white; background-color: black">-->
+        <!--<a href="#/track/{{track.mbid}}">-->
+            <!--<img class="img-responsive" src="{{model.getImage(track)}}"-->
+                 <!--alt="{{track.name}}" style="width: 240px;">-->
+        <!--</a>-->
+            <!--<h5 class="text-center" style="color: white">{{track.name}}</h5>-->
+            <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                <!--<a ng-click="model.viewArtist(track)"-->
+                   <!--class="text-primary"-->
+                   <!--role="button">-->
+                    <!--<h5 class="text-center" style="color: #eb9316;">{{track.artist.name}}</h5> </a>-->
+
+
+            <!--<a ng-show="{{track.streamable.fulltrack}}" href="{{track.streamable['#text']}}" class="btn btn-primary">Play</a>-->
+    <!--</div>-->
+<!--</div>-->
+
+<img ng-show="model.tracks.length==0" src="../../images/loading.png"
+     class="img-fluid col-centered my-4">
+<br><br>
+
+<div ng-show="model.tracks.length!=0">
+    <h3 style="color: white;">Most Popular Songs</h3>
+
+<div class="card-deck">
+    <div class="card" ng-repeat="track in model.tracks" ng-if="track.mbid!=''" style="margin-bottom: 50px;">
+        <!--<a href="#/track/{{track.mbid}}">-->
+            <img class="card-img-top" src="{{model.getImage(track)}}"
+                 alt="{{track.name}}">
+        <!--</a>-->
+        <div class="card-block">
+            <h4 class="card-title"><a href="#/track/{{track.mbid}}">{{track.name}}</a></h4>
+            <a ng-click="model.viewArtist(track)"
+               class="text-primary"
+               role="button">
+                <h5 class="card-title">{{track.artist.name}}</h5> </a>
+            <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+            <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<!--<img ng-show="model.tracks.length==0" src="../../images/loading.png"-->
+     <!--class="img-fluid col-centered my-4">-->
+<!--<br><br>-->
+
+<!--<div ng-show="model.tracks.length!=0">-->
+    <!--<h3 style="color: white;">Most Popular Songs</h3>-->
+    <!--&lt;!&ndash;{{model.searchTerm}}&ndash;&gt;-->
+    <!--<div ng-repeat="track in model.tracks" ng-if="track.mbid!=''"-->
+         <!--style="float: left; width: 250px; height: 300px; margin-right: 10px; margin-bottom: 20px; border: thick solid white; background-color: black">-->
+        <!--<a href="#/track/{{track.mbid}}">-->
+            <!--<img class="img-responsive" src="{{model.getImage(track)}}"-->
+                 <!--alt="{{track.name}}" style="width: 240px;">-->
+        <!--</a>-->
+        <!--<h5 class="text-center" style="color: white">{{track.name}}</h5>-->
+        <!--&lt;!&ndash;<p>&ndash;&gt;-->
+        <!--<a ng-click="model.viewArtist(track)"-->
+           <!--class="text-primary"-->
+           <!--role="button">-->
+            <!--<h5 class="text-center" style="color: #eb9316;">{{track.artist.name}}</h5> </a>-->
+
+
+        <!--<a ng-show="{{track.streamable.fulltrack}}" href="{{track.streamable['#text']}}" class="btn btn-primary">Play</a>-->
+    <!--</div>-->
+<!--</div>-->
