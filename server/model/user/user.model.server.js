@@ -15,6 +15,7 @@ module.exports = function (model) {
         findUserByCredentials: findUserByCredentials,
         updateProfile: updateProfile,
         deleteUser: deleteUser,
+        findUserByFacebookId: findUserByFacebookId,
         findUserByGoogleId: findUserByGoogleId,
         findAllUsers: findAllUsers,
         findAllArtists: findAllArtists,
@@ -152,6 +153,10 @@ module.exports = function (model) {
 
     function findAllUsers() {
         return userModel.find();
+    }
+
+    function findUserByFacebookId(facebookId) {
+        return UserModel.findOne({'facebook.id': facebookId});
     }
 
     function findUserByGoogleId(googleId) {
