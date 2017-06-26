@@ -252,6 +252,10 @@ a:focus {
     transition: all 0.3s ease-in-out;
     border-radius: 0;
     font-size: small;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+
 }
 .btn-default {
     border: 1px solid white;
@@ -268,16 +272,25 @@ a:focus {
 }
 
 .btn-new{
-    border: 1px solid black;
-    color: black;
+    border: 1px solid white;
+    color: white;
     background-color: transparent;
 }
 
-.btn-new:hover,
-.btn-new:focus {
-    border: 1px solid #311557;
+.btn-project:hover,
+.btn-project:focus {
+    border: 1px solid black;
     outline: none;
     color: black;
+    background-color: cadetblue;
+}
+
+
+.btn-new:hover,
+.btn-new:focus {
+    border: 1px solid white;
+    outline: none;
+    color: white;
     /*background-color: cadetblue;*/
 }
 ul.banner-social-buttons {
@@ -334,12 +347,13 @@ body {
 }
 
 #project{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 #contact {
-    color: #3c3c3c;
+    color: white;
+    background-color: black;
 }
 
 footer{
