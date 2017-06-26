@@ -15,7 +15,7 @@ module.exports = function () {
             id: String
         },
         facebook: {
-            id:String,
+            id: String,
             token: String
         },
         role: {type: String, enum: ['ADMIN', 'ARTIST', 'USER'], default: 'USER'},
