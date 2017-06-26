@@ -33,7 +33,7 @@
             if (vm.user){
                 return vm.user.photo;
             }else {
-                return "uploadss/default-profile.png";
+                return "uploads/default-profile.png";
             }
         }
 

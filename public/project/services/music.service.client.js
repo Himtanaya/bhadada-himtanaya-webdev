@@ -8,8 +8,8 @@
 
         // Last.Fm API
         // API KEy and Secret
-        var key = /*process.env.API_KEY ||*/ "1459500a61d442bb8aaae3f69c99a1fa";
-        var secret = /*process.env.API_SECRET ||*/ "182b67f2c9e808a2944a6e7a1ca6140a";
+        var key = /*process.env.API_KEY ||*/ "82d41887eded3508556137889b65f14e";
+        var secret = /*process.env.API_SECRET// ||*/ "fb228a0b77eec1eed2c24ff9a6f5cee8";
         var urlBase = "http://ws.audioscrobbler.com/2.0/?method=METHOD&PARAMS&api_key=API_KEY&format=json";
 
         var searchKey = null;

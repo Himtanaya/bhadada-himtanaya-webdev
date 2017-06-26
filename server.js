@@ -54,7 +54,7 @@ app.use(passport.session());
 app.set('view engine', 'ejs');
 
 // configure a project directory to host static content
-app.use(express.static(__dirname + '/project'));
+app.use(express.static(__dirname + '/public'));
 
 
 // require('./assignment/app')(app);

@@ -121,8 +121,8 @@
 
         function getImage(track) {
             if(!track.name)
-                return '../../uploadss/default_track.png';
-            return track.album.image[2]['#text']?track.album.image[2]['#text']:'../../uploadss/default_track.png';
+                return '../../uploads/default_track.png';
+            return track.album.image[2]['#text']?track.album.image[2]['#text']:'../../uploads/default_track.png';
         }
 
         function doYouTrustHTML(text) {

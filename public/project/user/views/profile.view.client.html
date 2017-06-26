@@ -95,7 +95,7 @@
     <div class="col-md-4 col-sm-6 col-xs-12" style="margin-top: 50px;">
         <div class="text-center">
             <img class="img-fluid mb-sm-2"
-                 width="150" height="150" src="{{model.user.photo||'../../uploads/default-profile.png'}}"
+                 width="150" height="150" src="{{model.user.photo||'../project/uploads/default-profile.png'}}"
                  alt="{{model.user.firstName}}">
 
             <form name="uploadForm" action="/api/upload" method="post" enctype="multipart/form-data">
