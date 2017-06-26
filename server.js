@@ -54,12 +54,12 @@ app.use(passport.session());
 app.set('view engine', 'ejs');
 
 // configure a project directory to host static content
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/project'));
 
 
-require('./assignment/app')(app);
+// require('./assignment/app')(app);
 require ("./test/app.js")(app);
-require ("./project/app")(app);
+require ("./server/app")(app);
 
 console.log("Starting Server...");
 // var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
