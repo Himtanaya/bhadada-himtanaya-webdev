@@ -103,7 +103,7 @@
         }
 
         function getImage(track) {
-            return track.image[2]['#text']?track.image[2]['#text']:'../../uploadss/default_track.png';
+            return track.image[2]['#text']?track.image[2]['#text']:'../../uploads/default_track.png';
         }
 
         /*function getStreaming(track) {
