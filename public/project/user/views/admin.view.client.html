@@ -1,4 +1,4 @@
-<h1 class="mx-auto">Admin</h1>
+<h1 class="mx-auto" style="color: white">Admin</h1>
 
 <ul class="list-group col-lg-6 mx-auto">
     <li class="list-group-item active">
@@ -6,9 +6,6 @@
     </li>
     <li ng-repeat="user in model.users" class="list-group-item">
         {{user.username}}
-
-        <!--<input ng-model="user.role" class="mx-auto"/>-->
-
         <select class="custom-select mb-2 mr-sm-2 mb-sm-2 mx-auto" id="userRole" ng-model="user.role">
             <option value="USER">User</option>
             <option value="ARTIST">Artist</option>
@@ -26,4 +23,36 @@
 </ul>
 
 
-<!--{{model.users}}-->
+
+<!--<div class="container-fluid">-->
+    <!--<ul>-->
+        <!--<li ng-repeat="user in model.users" style="color: white">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-3 col-xs-1"></div>-->
+                <!--<div class="col-md-3 col-xs-4">-->
+                    <!--{{user.username}}-->
+                <!--</div>-->
+                <!--<div class="col-md-2 col-xs-4">-->
+                    <!--<select class="custom-select mb-2 mr-sm-2 mb-sm-2 mx-auto" id="userRole" ng-model="user.role">-->
+                        <!--<option value="USER">User</option>-->
+                        <!--<option value="ARTIST">Artist</option>-->
+                        <!--<option value="ADMIN">Admin</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--<div class="col-md-1 col-xs-2">-->
+                    <!--<span ng-click="model.updateUser(user)"-->
+                          <!--class="fa fa-check float-right" role="button">-->
+                    <!--</span>-->
+
+                    <!--<span ng-click="model.deleteUser(user._id)"-->
+                          <!--class="fa fa-remove float-right">-->
+                    <!--</span>-->
+                <!--</div>-->
+                <!--<div class="col-md-3 col-xs-1"></div>-->
+            <!--</div>-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+
+
