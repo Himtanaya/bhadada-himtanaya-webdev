@@ -16,7 +16,7 @@ module.exports = function (app, model) {
 
     var multer = require('multer'); // npm install multer --save
     var upload = multer({
-        dest: __dirname + '/../../public/uploads'
+        dest: __dirname + '/../../public/uploadss'
     });
 
     app.post("/api/upload", upload.single('myFile'), uploadImage);
@@ -45,7 +45,7 @@ module.exports = function (app, model) {
         widgetModel
             .findWidgetById(widgetId)
             .then(function (widget) {
-                widget.url = '/uploads/' + filename;
+                widget.url = '/uploadss/' + filename;
 
                 return widgetModel
                     .updateWidget(widgetId, widget);
@@ -57,7 +57,7 @@ module.exports = function (app, model) {
                 res.sendStatus(500).send(err);
             });
 
-        // widget.url = '/uploads/'+filename;
+        // widget.url = '/uploadss/'+filename;
         // console.log(widget);
 
         // var callbackUrl   = "/assignment/index.html#!/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+widgetId;
