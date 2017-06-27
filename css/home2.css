@@ -264,7 +264,7 @@ a:focus {
     border: 1px solid #311557;
     outline: none;
     color: white;
-    background-color: cadetblue;
+    background-color: white;
 }
 
 .btn-new{
@@ -356,4 +356,8 @@ footer{
 
 .tnn-info{
     font-size: 18px;
+}
+
+#myemail{
+    color: white;
 }
