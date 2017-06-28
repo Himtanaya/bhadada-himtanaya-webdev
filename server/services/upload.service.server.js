@@ -5,7 +5,7 @@ module.exports = function (app, model) {
     var multer = require('multer'); // npm install multer --save
     var upload = multer({
         // dest: __dirname+'/../../project/uploads'
-        dest: __dirname+'/../../public/project/uploads'
+        dest: __dirname + '/../../public/project/uploads'
 
     });
 
@@ -32,8 +32,8 @@ module.exports = function (app, model) {
         var track = {
             title: req.body.title,
             artist: req.user._id,
-            url: '/uploads/'+trackname,
-            image: '/uploads/'+imagename,
+            url: '/project/uploads/'+trackname,
+            image: '/project/uploads/'+imagename,
             wiki: {
                 summary: req.body.summary
             }
@@ -42,9 +42,10 @@ module.exports = function (app, model) {
         trackModel
             .createTrack(track)
             .then(function (track) {
-                //console.log(track);
-                res.redirect('/#/mytracks');
+                console.log(track);
+                res.redirect('/project/index.html#/mytracks');
             }, function (err) {
+                console.log(err);
                 res.sendStatus(500).send(err);
             });
 /*        userModel
@@ -82,18 +83,20 @@ module.exports = function (app, model) {
         userModel
             .findUserById(userId)
             .then(function (user) {
-                user.photo = '/uploads/'+filename;
+                user.photo = '/project/uploads/'+filename;
                 //console.log(user);
-
+                console.log(destination);
                 return userModel
                     .updateProfile(user);
             })
             .then(function (user) {
                 // var callbackUrl   = "#/profile";
-                //console.log("IMage added");
+                console.log("IMage added");
+                console.log(filename);
                 // res.sendStatus(204);
-                res.redirect('/#/profile');
+                res.redirect('/project/index.html#/profile');
             }, function (err) {
+                console.log("image err" + err);
                 res.sendStatus(500).send(err);
             });
     }

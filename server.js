@@ -58,7 +58,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 require ("./test/app.js")(app);
-require("./assignment/app")(app);
+// require("./assignment/app")(app);
 require ("./server/app")(app);
 
 console.log("Starting Server...");

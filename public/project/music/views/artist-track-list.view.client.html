@@ -33,14 +33,14 @@
 <div ng-show="model.tracks.length!=0" style="margin-top: 50px;">
     <div class="card-deck">
         <!--<div class="col-md-3 col-xs-8">-->
-            <div class="col-md-3 col-xs-8 card" ng-repeat="track in model.tracks" ng-if="track._id!=''" style="margin-bottom: 50px;">
+            <div ng-repeat="track in model.tracks" ng-if="track._id!=''" style="margin-bottom: 50px; width: 300px;">
                 <!--<a href="#/track/{{track.mbid}}">-->
                 <img class="img-responsive" src="{{track.image}}"
-                     alt="{{track.title}}">
+                     alt="{{track.title}}" style="height: 200px;">
                 <!--</a>-->
                 <div class="card-block">
                     <h4 class="card-title"><a href="#/track/{{track._id}}">{{track.title}}</a></h4>
-                    <h5 class="card-title">{{track.artist.screenName}}</h5>
+                    <h5 class="card-title" style="color: white">{{track.artist.screenName}}</h5>
                     <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
                     <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
                 </div>
