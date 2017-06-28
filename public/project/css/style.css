@@ -232,8 +232,17 @@ body {
 }
 
 .top-margin {
-    margin-top: 10px;
+    margin-top: 20px;
 }
+
+.left-margin {
+    margin-left: 10px;
+}
+
+.right-margin{
+    margin-right: 10px;
+}
+
 .row-margin {
     margin-left: 0px;
     margin-right: 0px;
@@ -260,7 +269,11 @@ a:not([href]):not([tabindex]) {
 }
 
 .love {
-    color: #ce1139;
+    color: blue;
+}
+
+.like{
+    color: blue;
 }
 
 .vsk-glyphicon-pad{
@@ -503,6 +516,15 @@ a:hover {
 }
 
 
-/*.thumbnail{*/
-    /*border-color: white;*/
-/*}*/
+.track-label{
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
